@@ -1,0 +1,39 @@
+.fundo-escuro {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #121212; /* fundo preto escuro */
+  z-index: -1;
+  overflow-y: auto;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+}
+
+.alterar-container {
+  background-color: rgba(18, 18, 18, 0.95); /* fundo preto padronizado */
+  border-radius: 1rem;
+  padding: 2rem;
+  color: #e0e0e0;
+  max-width: 600px;
+  margin: 0 auto;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.9);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.alterar-title {
+  text-align: center;
+  font-size: 2rem;
+  color: #f0f0f0; /* amarelo vibrante para destaque */
+  margin-bottom: 2rem;
+  letter-spacing: 0.04em;
+}
+
+.alterar-label {
+  font-weight: 600;
+  color: #d1fae5; /* verde claro para melhor contraste no escuro */
+}
+
+.alterar-btn {
+  margin-top: 1rem;
+}
