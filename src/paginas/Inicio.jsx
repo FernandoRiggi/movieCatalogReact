@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import './Inicio.css';  // importe o arquivo CSS
+import './Inicio.css'; 
 
 function Inicio() {
   const [filmes, setFilmes] = useState([]);
