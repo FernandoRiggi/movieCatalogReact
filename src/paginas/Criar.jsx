@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
+import './Criar.css';
 
 function Criar() {
   const [filme, setFilme] = useState({ nome: '', genero: '', ano: '' });
@@ -14,24 +15,38 @@ function Criar() {
   };
 
   return (
-    <div className='container py-4'>
-      <h2>Criar Novo Filme</h2>
-      <form onSubmit={handleSubmit}>
-        <div className='mb-3'>
-          <label>Nome:</label>
-          <input type='text' className='form-control' onChange={(e) => setFilme({ ...filme, nome: e.target.value })} />
-        </div>
-        <div className='mb-3'>
-          <label>Gênero:</label>
-          <input type='text' className='form-control' onChange={(e) => setFilme({ ...filme, genero: e.target.value })} />
-        </div>
-        <div className='mb-3'>
-          <label>Ano:</label>
-          <input type='text' className='form-control' onChange={(e) => setFilme({ ...filme, ano: e.target.value })} />
-        </div>
-        <button className='btn btn-success'>Criar</button>
-        <Link to='/' className='btn btn-secondary ms-2'>Cancelar</Link>
-      </form>
+    <div className="fundo-escuro">
+      <div className='criar-container'>
+        <h2 className='criar-title'>Criar Novo Filme</h2>
+        <form onSubmit={handleSubmit}>
+          <div className='mb-3'>
+            <label className='criar-label'>Nome:</label>
+            <input
+              type='text'
+              className='form-control'
+              onChange={(e) => setFilme({ ...filme, nome: e.target.value })}
+            />
+          </div>
+          <div className='mb-3'>
+            <label className='criar-label'>Gênero:</label>
+            <input
+              type='text'
+              className='form-control'
+              onChange={(e) => setFilme({ ...filme, genero: e.target.value })}
+            />
+          </div>
+          <div className='mb-3'>
+            <label className='criar-label'>Ano:</label>
+            <input
+              type='text'
+              className='form-control'
+              onChange={(e) => setFilme({ ...filme, ano: e.target.value })}
+            />
+          </div>
+          <button className='btn btn-success criar-btn'>Criar</button>
+          <Link to='/' className='btn btn-secondary ms-2 criar-btn'>Cancelar</Link>
+        </form>
+      </div>
     </div>
   );
 }
