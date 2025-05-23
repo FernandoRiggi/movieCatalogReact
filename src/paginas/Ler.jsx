@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import axios from 'axios';
+import './Ler.css';
 
 function Ler() {
   const { id } = useParams();
@@ -13,13 +14,15 @@ function Ler() {
   }, [id]);
 
   return (
-    <div className='container py-4'>
-      <h2>Detalhes do Filme</h2>
-      <p><strong>ID:</strong> {filme.id}</p>
-      <p><strong>Nome:</strong> {filme.nome}</p>
-      <p><strong>Gênero:</strong> {filme.genero}</p>
-      <p><strong>Ano:</strong> {filme.ano}</p>
-      <Link to='/' className='btn btn-secondary'>Cancelar</Link>
+    <div className="fundo-escuro">
+      <div className='ler-container'>
+        <h2 className='ler-title'>Detalhes do Filme</h2>
+        <p className='ler-info'><strong className='ler-label'>ID:</strong> {filme.id}</p>
+        <p className='ler-info'><strong className='ler-label'>Nome:</strong> {filme.nome}</p>
+        <p className='ler-info'><strong className='ler-label'>Gênero:</strong> {filme.genero}</p>
+        <p className='ler-info'><strong className='ler-label'>Ano:</strong> {filme.ano}</p>
+        <Link to='/' className='btn btn-secondary'>Cancelar</Link>
+      </div>
     </div>
   );
 }
