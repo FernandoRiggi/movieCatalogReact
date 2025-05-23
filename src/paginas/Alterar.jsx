@@ -18,7 +18,7 @@ function Alterar() {
 
     try {
       const res = await axios.get(`https://682e0c67746f8ca4a47bb2b4.mockapi.io/filmes/${id}`);
-      console.log(res.data); // Verifica os dados retornados
+      console.log(res.data); 
       if (!res.data || Object.keys(res.data).length === 0) {
         setErro('ID inválido ou filme não encontrado.');
         setFilme(null);
