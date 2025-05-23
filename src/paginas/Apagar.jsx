@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
+import './Apagar.css';
 
 function Apagar() {
   const [id, setId] = useState('');
@@ -8,6 +9,11 @@ function Apagar() {
   const navigate = useNavigate();
 
   const handleDelete = () => {
+    if (id.trim() === '') {
+      setMensagem('Por favor, insira um id.');
+      return;
+    }
+
     axios.delete(`https://682e0c67746f8ca4a47bb2b4.mockapi.io/filmes/${id}`)
       .then(() => {
         setMensagem('Filme apagado com sucesso!');
@@ -17,12 +23,23 @@ function Apagar() {
   };
 
   return (
-    <div className='container py-4'>
-      <h2>Apagar Filme</h2>
-      <input type='text' placeholder='ID do filme' className='form-control mb-2' value={id} onChange={(e) => setId(e.target.value)} />
-      <button className='btn btn-danger me-2' onClick={handleDelete}>Apagar</button>
-      <Link to='/' className='btn btn-secondary'>Cancelar</Link>
-      {mensagem && <p className='mt-2'>{mensagem}</p>}
+    <div className="fundo-escuro">
+      <div className='apagar-container'>
+        <h2 className='apagar-title'>Apagar Filme</h2>
+
+        <input
+          type='text'
+          placeholder='ID do filme'
+          className='form-control mb-2'
+          value={id}
+          onChange={(e) => setId(e.target.value)}
+        />
+
+        <button className='btn btn-danger me-2' onClick={handleDelete}>Apagar</button>
+        <Link to='/' className='btn btn-secondary'>Cancelar</Link>
+
+        {mensagem && <p className='apagar-alerta'>{mensagem}</p>}
+      </div>
     </div>
   );
 }
